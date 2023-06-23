@@ -2,7 +2,7 @@ import { Searchbar } from "react-native-paper";
 import React from "react";
 import { SafeAreaView, StatusBar, View } from "react-native";
 import { RestaurantInfoCard } from "../components/RestaurantInfoCard";
-import { styled } from "styled-components/native";
+import styled from "styled-components/native";
 
 const SafeArea = styled(SafeAreaView)`
   flex: 1;

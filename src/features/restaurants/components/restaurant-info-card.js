@@ -1,10 +1,11 @@
 import React from "react";
-
 import { SvgXml } from "react-native-svg";
+
 import star from "../../../../assets/star";
 import open from "../../../../assets/open";
 import { Spacer } from "../../../components/spacer/spacer.component";
 import { Text } from "../../../components/typography/text.component";
+
 import {
   Icon,
   Info,
@@ -13,7 +14,6 @@ import {
   Section,
   Rating,
   SectionEnd,
-  Open,
   Address,
 } from "./restaurant-info-card-style";
 
@@ -48,7 +48,7 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
               <Text variant="error">CLOSED TEMPORARILY</Text>
             )}
             <Spacer position="left" size="large">
-              {isOpenNow && <Open xml={open} width={20} height={20} />}
+              {isOpenNow && <SvgXml xml={open} width={20} height={20} />}
             </Spacer>
             <Spacer position="left" size="large">
               <Icon source={{ uri: icon }} />

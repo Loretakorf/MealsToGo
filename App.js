@@ -14,7 +14,6 @@ import { Ionicons } from "@expo/vector-icons";
 import { RestaurantsScreen } from "./src/features/restaurants/screens/restaurants.screen";
 import { theme } from "./src/infrastructure/theme";
 import { SafeArea } from "./src/components/utility/safe-area.component";
-import { restaurantsRequest } from "./src/servises/restaurants/restaurants.servise";
 
 const Tab = createBottomTabNavigator();
 

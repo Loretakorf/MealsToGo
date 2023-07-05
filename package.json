@@ -9,6 +9,9 @@
     "web": "expo start --web",
     "lint": "eslint . --ext .js"
   },
+  "resolutions": {
+    "@expo/cli": "xxx"
+  },
   "dependencies": {
     "@expo-google-fonts/lato": "^0.2.3",
     "@expo-google-fonts/oswald": "^0.2.3",

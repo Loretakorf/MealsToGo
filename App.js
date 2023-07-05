@@ -14,13 +14,12 @@ import { Ionicons } from "@expo/vector-icons";
 import { RestaurantsScreen } from "./src/features/restaurants/screens/restaurants.screen";
 import { theme } from "./src/infrastructure/theme";
 import { SafeArea } from "./src/components/utility/safe-area.component";
-import { RestaurantsContextProvider } from "./src/servises/restaurants/restaurants.contex";
+import { RestaurantsContextProvider } from "./src/servises/restaurants/restaurants.context";
 
 const Tab = createBottomTabNavigator();
 
 const TAB_ICON = {
   Restaurant: "md-restaurant",
-  Map: "md-map",
   Settings: "md-settings",
 };
 
@@ -62,8 +61,8 @@ export default function App() {
             <Tab.Navigator
               screenOptions={createScreenOptions}
               tabBarOptions={{
-                tabBarActiveTintColor: "tomato",
-                tabBarInactiveTintColor: "gray",
+                activeTintColor: "tomato",
+                inactiveTintColor: "gray",
               }}
             >
               <Tab.Screen name="Restaurant" component={RestaurantsScreen} />

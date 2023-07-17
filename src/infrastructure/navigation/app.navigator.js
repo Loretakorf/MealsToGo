@@ -12,11 +12,13 @@ const TAB_ICON = {
   Restaurant: "md-restaurant",
   Settings: "md-settings",
 };
-const Settings = () => (
-  <SafeArea>
-    <Text>Settings</Text>
-  </SafeArea>
-);
+const Settings = () => {
+  return (
+    <SafeArea>
+      <Text>Settings</Text>
+    </SafeArea>
+  );
+};
 
 const createScreenOptions = ({ route }) => {
   const iconName = TAB_ICON[route.name];

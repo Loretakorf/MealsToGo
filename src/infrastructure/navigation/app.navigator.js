@@ -1,6 +1,6 @@
 import React from "react";
 import { Text } from "react-native";
-import { SafeArea } from "./src/components/utility/safe-area.component";
+import { SafeArea } from "../../components/utility/safe-area.component";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
 import { Ionicons } from "@expo/vector-icons";

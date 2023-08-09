@@ -1,5 +1,5 @@
-import React, { useEffect, useState, createContext } from "react";
-import * as firebase from "firebase/app";
+import React, { useState, createContext } from "react";
+
 import { loginRequest } from "./authentication.service";
 
 export const AuthenticationContext = createContext();

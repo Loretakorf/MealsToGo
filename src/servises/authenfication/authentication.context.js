@@ -48,8 +48,13 @@ export const AuthenticationContextProvider = ({ children }) => {
       });
   };
   const onLogout = () => {
-    setUser(null);
-    firebase.auth().SignOut();
+    firebase
+      .auth()
+      .signOut()
+      .then(() => {
+        setUser(null);
+        setError(null);
+      });
   };
   return (
     <AuthenticationContext.Provider

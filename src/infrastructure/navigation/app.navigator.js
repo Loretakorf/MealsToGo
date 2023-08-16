@@ -6,6 +6,9 @@ import { AuthenticationContext } from "../../servises/authenfication/authenticat
 import { Ionicons } from "@expo/vector-icons";
 import { RestaurantsNavigator } from "./restaurants.navigator";
 import { MapScreen } from "../../features/map/screens/map.screen";
+import { FavouritesContextProvider } from "../../servises/favourites/favourites.context";
+import { LocationContextProvider } from "../../servises/location/location.context";
+import { RestaurantsContextProvider } from "../../servises/restaurants/restaurants.context";
 
 const Tab = createBottomTabNavigator();
 const TAB_ICON = {
@@ -32,16 +35,22 @@ const createScreenOptions = ({ route }) => {
 };
 export const AppNavigator = () => {
   return (
-    <Tab.Navigator
-      screenOptions={createScreenOptions}
-      tabBarOptions={{
-        tabBarActiveTintColor: "tomato",
-        tabBarInactiveTintColor: "gray",
-      }}
-    >
-      <Tab.Screen name="Restaurant" component={RestaurantsNavigator} />
-      <Tab.Screen name="Map" component={MapScreen} />
-      <Tab.Screen name="Settings" component={Settings} />
-    </Tab.Navigator>
+    <FavouritesContextProvider>
+      <LocationContextProvider>
+        <RestaurantsContextProvider>
+          <Tab.Navigator
+            screenOptions={createScreenOptions}
+            tabBarOptions={{
+              tabBarActiveTintColor: "tomato",
+              tabBarInactiveTintColor: "gray",
+            }}
+          >
+            <Tab.Screen name="Restaurant" component={RestaurantsNavigator} />
+            <Tab.Screen name="Map" component={MapScreen} />
+            <Tab.Screen name="Settings" component={Settings} />
+          </Tab.Navigator>
+        </RestaurantsContextProvider>
+      </LocationContextProvider>
+    </FavouritesContextProvider>
   );
 };

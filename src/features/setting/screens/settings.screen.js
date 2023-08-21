@@ -17,22 +17,23 @@ export const SettingsScreen = ({ navigation }) => {
   const { onLogout, user } = useContext(AuthenticationContext);
   return (
     <SafeArea>
-      <List.Section>
-        <AvatarContainer>
-          <Avatar.Icon size={180} icon="human" backgroundColor="2182BD" />
-          <Spacer position="top" size="large">
-            <Text variant="label">{user.email}</Text>
-          </Spacer>
-        </AvatarContainer>
+      <AvatarContainer>
+        <Avatar.Icon size={180} icon="human" backgroundColor="#2182BD" />
+        <Spacer position="top" size="large">
+          <Text variant="label">{user.email}</Text>
+        </Spacer>
+      </AvatarContainer>
 
-        <Avatar.Icon size={180} icon="human" backgroundColor="2182BD" />
+      <List.Section>
         <SettingsItem
           title="Favourites"
+          description="View your favourites"
           left={(props) => <List.Icon {...props} color="black" icon="heart" />}
           onPress={() => navigation.navigate("Favourites")}
         />
+
         <SettingsItem
-          title="Log out"
+          title="Logout"
           left={(props) => <List.Icon {...props} color="black" icon="door" />}
           onPress={onLogout}
         />
